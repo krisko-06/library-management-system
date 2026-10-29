@@ -1,6 +1,6 @@
 # 📚 Library Management System
 
-> A robust, console-based Java application designed to manage a library catalog, user registrations, and item circulation (borrowing/returning). Developed as the final project for **COS 2030: Basics in Java Programming (Spring 2026)**.
+> A robust, console-based Java application designed to manage a library catalog, user registrations, and item circulation (borrowing/returning).
 
 ---
 
@@ -15,25 +15,25 @@ The **Library Management System** simulates a real-world library catalog managem
 The project strictly follows Object-Oriented Programming (OOP) principles and clean architecture guidelines:
 
 * **Abstract Classes & Inheritance:** 
-  * `Item` serves as the abstract base class implementing `Comparable<Item>`[cite: 5].
-  * `Book` and `DVD` extend `Item`[cite: 1, 2].
-  * `EBook` extends `Book` to introduce specialized digital properties[cite: 3].
+  * `Item` serves as the abstract base class implementing `Comparable<Item>`.
+  * `Book` and `DVD` extend `Item`.
+  * `EBook` extends `Book` to introduce specialized digital properties.
 * **Interfaces & Polymorphism:**
-  * `LibraryUserActions` defines core user capabilities (borrowing and returning items)[cite: 9].
+  * `LibraryUserActions` defines core user capabilities (borrowing and returning items).
   * Polymorphic references are used extensively across collections holding diverse `Item` sub-types.
 * **Encapsulation & Immutability:** Proper access modifiers (`private`, `protected`, `public`) with data validation logic in setters and constructors.
-* **Composition:** `User` objects contain composition relationships with `LibraryCard` and collections of borrowed `Item` instances[cite: 8, 11].
+* **Composition:** `User` objects contain composition relationships with `LibraryCard` and collections of borrowed `Item` instances.
 
 ---
 
 ## 🛠️ Technical Requirements Met (COS 2030)
 
-* **Java Fundamentals:** Primitive data types, control flow statements (`if-else`, `switch`, loops), structured methods, and string operations[cite: 13].
+* **Java Fundamentals:** Primitive data types, control flow statements (`if-else`, `switch`, loops), structured methods, and string operations.
 * **Error Handling & Robustness:** 
-  * Custom runtime exception `ItemUnavailableException` handles invalid borrowing states[cite: 6].
-  * Comprehensive console input validation ensures the application handles unexpected entries or wrong data types gracefully without crashing[cite: 13].
+  * Custom runtime exception `ItemUnavailableException` handles invalid borrowing states.
+  * Comprehensive console input validation ensures the application handles unexpected entries or wrong data types gracefully without crashing.
 * **Generics & Collections Framework:** 
-  * Leverages `TreeSet` (for sorted catalog items), `HashMap` (for fast call-number lookups), `HashSet` (for unique users/formats), and `ArrayList` (for tracking user borrowings)[cite: 7, 11].
+  * Leverages `TreeSet` (for sorted catalog items), `HashMap` (for fast call-number lookups), `HashSet` (for unique users/formats), and `ArrayList` (for tracking user borrowings).
 * **Lambda Expressions & Streams:** Utilizes Java Streams and lambda expressions for filtering, searching, and managing catalog items functionally.
 
 ---
@@ -43,14 +43,14 @@ The project strictly follows Object-Oriented Programming (OOP) principles and cl
 ```text
 src/
 │
-├── Book.java                  # Book entity extending Item[cite: 1]
-│   ├── DVD.java               # DVD entity extending Item[cite: 2]
-│   ├── EBook.java             # EBook entity extending Book[cite: 3]
-│   ├── FileFormat.java        # Enum for E-book formats (EPUB, MOBI, AZW, PDF)[cite: 4]
-│   ├── Item.java              # Abstract base class for all catalog items[cite: 5]
-│   ├── ItemUnavailableException.java # Custom exception for unavailable items[cite: 6]
+├── Book.java                  # Book entity extending Item
+│   ├── DVD.java               # DVD entity extending Item
+│   ├── EBook.java             # EBook entity extending Book
+│   ├── FileFormat.java        # Enum for E-book formats (EPUB, MOBI, AZW, PDF)
+│   ├── Item.java              # Abstract base class for all catalog items
+│   ├── ItemUnavailableException.java # Custom exception for unavailable items
 │   ├── Library.java           # Core system logic, collections, and menu management
-│   ├── LibraryCard.java       # Library card entity tracking membership IDs[cite: 8]
-│   ├── LibraryUserActions.java# Interface defining user borrowing/returning behavior[cite: 9]
-│   ├── Main.java              # Entry point executing the application[cite: 10]
-│   └── User.java              # User entity implementing user actions[cite: 11]
+│   ├── LibraryCard.java       # Library card entity tracking membership IDs
+│   ├── LibraryUserActions.java# Interface defining user borrowing/returning behavior
+│   ├── Main.java              # Entry point executing the application
+│   └── User.java              # User entity implementing user actions
